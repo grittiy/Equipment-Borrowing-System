@@ -1,0 +1,13 @@
+<%
+'sql="delete  from facultystd WHERE idfac='"&request("idfac")&"' ;" 
+
+Set conn = Server.CreateObject("ADODB.Connection")
+conn.open "DRIVER={MySQL ODBC 3.51 Driver};SERVER=localhost;DATABASE=borrow2565;UID=root;PWD=;OPTION=3"
+Set rs = Server.CreateObject("ADODB.Recordset")
+
+rs.Open "delete  from  category2 WHERE idcategory='"+request("id")+"' ;" ,conn,1,3
+
+
+'rs.Open sql,conn,1,3
+response.redirect("inputcategory2.asp")
+%>
